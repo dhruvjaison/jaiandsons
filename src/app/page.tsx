@@ -1,103 +1,182 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { motion } from 'framer-motion';
+import { HeroVideo } from '@/components/HeroVideo';
+import { FeatureReel } from '@/components/FeatureReel';
+import { Amenities } from '@/components/Amenities';
+import { LocationMap } from '@/components/LocationMap';
+import { Developer } from '@/components/Developer';
+
+export default function HomePage() {
+  const handleBookTour = () => {
+    console.log('Opening booking modal...');
+  };
+
+  const handleViewFloorPlans = () => {
+    // Scroll to floor plans section
+    const element = document.getElementById('floor-plans');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Hero Video Section */}
+      <HeroVideo 
+        onBookTour={handleBookTour}
+        onViewFloorPlans={handleViewFloorPlans}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Floor Plans Section - Placeholder */}
+      <section id="floor-plans" className="min-h-screen luxury-gradient py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="text-5xl md:text-6xl font-playfair font-bold text-amber-500 mb-6">
+              Floor Plans
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Choose from our thoughtfully designed luxury residences
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
-            Read our docs
-          </a>
+            {[
+              { name: 'Unit A', area: '2,150 sq ft', bedrooms: '3 BHK', price: '₹2.8 Cr' },
+              { name: 'Unit B', area: '2,650 sq ft', bedrooms: '3 BHK', price: '₹3.2 Cr' },
+              { name: 'Unit C', area: '3,200 sq ft', bedrooms: '4 BHK', price: '₹4.1 Cr' },
+              { name: 'Unit D', area: '3,500 sq ft', bedrooms: '4 BHK', price: '₹4.5 Cr' },
+              { name: 'Penthouse', area: '4,800 sq ft', bedrooms: '5 BHK', price: '₹7.2 Cr' },
+              { name: 'Sky Villa', area: '5,200 sq ft', bedrooms: '5 BHK', price: '₹8.5 Cr' },
+            ].map((unit, index) => (
+              <motion.div
+                key={unit.name}
+                className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 hover:border-amber-500/50 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -8 }}
+              >
+                <h3 className="text-2xl font-playfair font-bold text-amber-500 mb-4">
+                  {unit.name}
+                </h3>
+                <div className="space-y-2 text-slate-300">
+                  <p><span className="text-slate-400">Area:</span> {unit.area}</p>
+                  <p><span className="text-slate-400">Type:</span> {unit.bedrooms}</p>
+                  <p><span className="text-slate-400">Starting:</span> {unit.price}</p>
+                </div>
+                <motion.button
+                  className="mt-4 w-full px-4 py-2 bg-amber-500/20 hover:bg-amber-500 text-amber-500 hover:text-slate-900 rounded-lg transition-all duration-300 border border-amber-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Details
+                </motion.button>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.a
+              href="/floor-plans"
+              className="inline-flex items-center px-8 py-4 bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore All Floor Plans
+            </motion.a>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Feature Reel Section */}
+      <FeatureReel />
+
+      {/* Amenities Section */}
+      <Amenities />
+
+      {/* Location Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-playfair font-bold text-slate-900 mb-6">
+              Prime Location
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Strategically located with easy access to shopping, education, healthcare, and entertainment
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <LocationMap height="600px" className="rounded-2xl overflow-hidden shadow-2xl" />
+          </motion.div>
+
+          {/* Location Benefits */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { icon: '🛍️', title: 'Shopping', desc: 'Premium malls within 3km' },
+              { icon: '🚇', title: 'Connectivity', desc: 'Metro station nearby' },
+              { icon: '🏥', title: 'Healthcare', desc: 'Top hospitals accessible' },
+              { icon: '🏫', title: 'Education', desc: 'Renowned schools nearby' },
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                className="text-center p-6 bg-white rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-playfair font-bold text-slate-900 mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-slate-600">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Developer Section */}
+      <Developer />
+    </>
   );
 }
