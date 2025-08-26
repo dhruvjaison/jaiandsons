@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { LeadFormModal } from './LeadFormModal';
 
 interface Testimonial {
   id: string;
@@ -193,6 +194,8 @@ function TestimonialCard({ testimonial, isActive }: { testimonial: Testimonial; 
 
 export function Developer() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [showVisitModal, setShowVisitModal] = useState(false);
+  const [showEnquiryModal, setShowEnquiryModal] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -348,6 +351,7 @@ export function Developer() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
+                  onClick={() => setShowVisitModal(true)}
                   className="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -355,6 +359,7 @@ export function Developer() {
                   Schedule Site Visit
                 </motion.button>
                 <motion.button
+                  onClick={() => setShowEnquiryModal(true)}
                   className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-lg transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -366,6 +371,18 @@ export function Developer() {
           </motion.div>
         </div>
       </section>
+
+      {/* Lead Form Modals */}
+      <LeadFormModal 
+        isOpen={showVisitModal} 
+        onClose={() => setShowVisitModal(false)}
+        initialTab="visit"
+      />
+      <LeadFormModal 
+        isOpen={showEnquiryModal} 
+        onClose={() => setShowEnquiryModal(false)}
+        initialTab="enquiry"
+      />
     </>
   );
 } 

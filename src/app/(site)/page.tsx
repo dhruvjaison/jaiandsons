@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HeroVideo } from '@/components/HeroVideo';
 import { FeatureReel } from '@/components/FeatureReel';
@@ -9,11 +8,7 @@ import { LocationMap } from '@/components/LocationMap';
 import { Developer } from '@/components/Developer';
 
 export default function HomePage() {
-  const [showBookingModal, setShowBookingModal] = useState(false);
-
   const handleBookTour = () => {
-    setShowBookingModal(true);
-    // TODO: Implement booking modal
     console.log('Opening booking modal...');
   };
 

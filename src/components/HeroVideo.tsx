@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/Button';
+import { LeadFormModal } from './LeadFormModal';
 
 interface HeroVideoProps {
   onBookTour?: () => void;
@@ -11,6 +12,7 @@ interface HeroVideoProps {
 
 export function HeroVideo({ onBookTour, onViewFloorPlans }: HeroVideoProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   const handleScrollToFloorPlans = () => {
     if (onViewFloorPlans) {
@@ -28,8 +30,8 @@ export function HeroVideo({ onBookTour, onViewFloorPlans }: HeroVideoProps) {
     if (onBookTour) {
       onBookTour();
     } else {
-      // Default behavior: could open a modal or navigate to booking page
-      console.log('Book tour clicked - implement modal or navigation');
+      // Default behavior: open the booking modal
+      setShowBookingModal(true);
     }
   };
 
@@ -181,6 +183,13 @@ export function HeroVideo({ onBookTour, onViewFloorPlans }: HeroVideoProps) {
           />
         </motion.div>
       </motion.div>
+
+      {/* Lead Form Modal */}
+      <LeadFormModal 
+        isOpen={showBookingModal} 
+        onClose={() => setShowBookingModal(false)}
+        initialTab="visit"
+      />
     </section>
   );
 } 
