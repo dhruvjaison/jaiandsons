@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HeroVideo } from '@/components/HeroVideo';
 import { FeatureReel } from '@/components/FeatureReel';
+import { Amenities } from '@/components/Amenities';
 
 export default function HomePage() {
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -80,53 +81,8 @@ export default function HomePage() {
       {/* Feature Reel Section */}
       <FeatureReel />
 
-      {/* Features Section */}
-      <section className="min-h-screen bg-slate-50 py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-5xl md:text-6xl font-playfair font-bold text-slate-900 mb-6">
-              Luxury Amenities
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Experience unparalleled comfort with world-class amenities
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: 'Rooftop Infinity Pool', desc: 'Stunning city skyline views' },
-              { title: 'Sky Lounge', desc: 'Exclusive social spaces' },
-              { title: 'Private Theater', desc: 'Premium entertainment' },
-              { title: 'Fitness Center', desc: 'State-of-the-art equipment' },
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                className="text-center p-6"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-16 h-16 bg-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-white rounded-full"></div>
-                </div>
-                <h3 className="text-xl font-playfair font-bold text-slate-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-600">
-                  {feature.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Amenities Section */}
+      <Amenities />
     </>
   );
 } 
