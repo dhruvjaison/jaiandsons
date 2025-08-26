@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HeroVideo } from '@/components/HeroVideo';
+import { FeatureReel } from '@/components/FeatureReel';
 
 export default function HomePage() {
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -75,6 +76,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Feature Reel Section */}
+      <FeatureReel />
 
       {/* Features Section */}
       <section className="min-h-screen bg-slate-50 py-20">
