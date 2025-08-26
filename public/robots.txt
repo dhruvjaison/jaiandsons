@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Host
+Host: https://arc-luxury.com
+
+# Sitemaps
+Sitemap: https://arc-luxury.com/sitemap.xml
