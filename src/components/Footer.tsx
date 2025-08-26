@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, MessageCircle, Download, Instagram, Facebook } from 'lucide-react';
+import { fadeUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/motion';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -57,9 +58,9 @@ export function Footer() {
           {/* Brand Section */}
           <motion.div
             className="lg:col-span-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-bold text-amber-500 mb-4">
@@ -76,9 +77,9 @@ export function Footer() {
           {/* Contact Information */}
           <motion.div
             className="lg:col-span-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-playfair font-bold text-amber-500 mb-6">
@@ -100,7 +101,7 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-amber-500 flex-shrink-0" />
                 <a 
                   href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-                  className="text-slate-300 hover:text-amber-500 transition-colors text-sm"
+                  className="text-slate-300 hover:text-amber-500 transition-colors text-sm link-underline"
                 >
                   {contactInfo.phone}
                 </a>
@@ -111,7 +112,7 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-amber-500 flex-shrink-0" />
                 <a 
                   href={`mailto:${contactInfo.email}`}
-                  className="text-slate-300 hover:text-amber-500 transition-colors text-sm"
+                  className="text-slate-300 hover:text-amber-500 transition-colors text-sm link-underline"
                 >
                   {contactInfo.email}
                 </a>

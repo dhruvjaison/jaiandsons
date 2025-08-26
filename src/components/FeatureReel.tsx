@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, MotionValue } from 'framer-motion';
+import { parallaxVariants, shouldReduceMotion } from '@/lib/motion';
 
 interface FeaturePanel {
   id: string;
