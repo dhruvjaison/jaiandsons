@@ -6,6 +6,7 @@ import { HeroVideo } from '@/components/HeroVideo';
 import { FeatureReel } from '@/components/FeatureReel';
 import { Amenities } from '@/components/Amenities';
 import { LocationMap } from '@/components/LocationMap';
+import { Developer } from '@/components/Developer';
 
 export default function HomePage() {
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -145,6 +146,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Developer Section */}
+      <Developer />
     </>
   );
 } 
