@@ -1,0 +1,255 @@
+{
+  "units": [
+    {
+      "id": "unit-a",
+      "name": "Unit A",
+      "title": "Premium 3 BHK",
+      "area": "2,150 sq ft",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "balconies": 2,
+      "price": "₹4.2 Cr onwards",
+      "image": "/media/floor-plans/unit-a.jpg",
+      "pdf": "/media/floor-plans/unit-a.pdf",
+      "description": "Spacious 3-bedroom apartment with premium finishes and stunning city views.",
+      "features": [
+        "Master suite with walk-in closet",
+        "Open-plan living and dining",
+        "Modern kitchen with island",
+        "Two private balconies",
+        "Study/home office space"
+      ],
+      "hotspots": [
+        {
+          "id": "living",
+          "x": 45,
+          "y": 35,
+          "room": "Living Room",
+          "dimensions": "18' × 14'",
+          "description": "Spacious living area with floor-to-ceiling windows"
+        },
+        {
+          "id": "kitchen",
+          "x": 25,
+          "y": 25,
+          "room": "Kitchen",
+          "dimensions": "12' × 10'",
+          "description": "Modern kitchen with premium appliances and island"
+        },
+        {
+          "id": "master",
+          "x": 70,
+          "y": 20,
+          "room": "Master Bedroom",
+          "dimensions": "16' × 14'",
+          "description": "Master suite with walk-in closet and en-suite bathroom"
+        },
+        {
+          "id": "bedroom2",
+          "x": 70,
+          "y": 50,
+          "room": "Bedroom 2",
+          "dimensions": "12' × 11'",
+          "description": "Comfortable bedroom with built-in wardrobes"
+        },
+        {
+          "id": "bedroom3",
+          "x": 70,
+          "y": 75,
+          "room": "Bedroom 3",
+          "dimensions": "11' × 10'",
+          "description": "Versatile room perfect for guests or home office"
+        }
+      ]
+    },
+    {
+      "id": "unit-b",
+      "name": "Unit B",
+      "title": "Luxury 3 BHK",
+      "area": "2,350 sq ft",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "balconies": 2,
+      "price": "₹4.8 Cr onwards",
+      "image": "/media/floor-plans/unit-b.jpg",
+      "pdf": "/media/floor-plans/unit-b.pdf",
+      "description": "Enhanced 3-bedroom layout with additional space and premium amenities.",
+      "features": [
+        "Larger master suite with sitting area",
+        "Separate dining room",
+        "Gourmet kitchen with pantry",
+        "Corner unit with wrap-around balcony",
+        "Dedicated study room"
+      ],
+      "hotspots": [
+        {
+          "id": "living",
+          "x": 40,
+          "y": 40,
+          "room": "Living Room",
+          "dimensions": "20' × 16'",
+          "description": "Grand living space with panoramic city views"
+        },
+        {
+          "id": "dining",
+          "x": 30,
+          "y": 55,
+          "room": "Dining Room",
+          "dimensions": "14' × 12'",
+          "description": "Separate formal dining area"
+        },
+        {
+          "id": "kitchen",
+          "x": 20,
+          "y": 30,
+          "room": "Kitchen",
+          "dimensions": "14' × 12'",
+          "description": "Gourmet kitchen with premium appliances and pantry"
+        },
+        {
+          "id": "master",
+          "x": 75,
+          "y": 25,
+          "room": "Master Suite",
+          "dimensions": "18' × 16'",
+          "description": "Luxurious master suite with sitting area and walk-in closet"
+        },
+        {
+          "id": "study",
+          "x": 75,
+          "y": 65,
+          "room": "Study Room",
+          "dimensions": "10' × 9'",
+          "description": "Quiet study space with built-in shelving"
+        }
+      ]
+    },
+    {
+      "id": "unit-c",
+      "name": "Unit C",
+      "title": "Executive 4 BHK",
+      "area": "2,850 sq ft",
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "balconies": 3,
+      "price": "₹6.2 Cr onwards",
+      "image": "/media/floor-plans/unit-c.jpg",
+      "pdf": "/media/floor-plans/unit-c.pdf",
+      "description": "Spacious 4-bedroom apartment designed for larger families with premium lifestyle.",
+      "features": [
+        "Four spacious bedrooms with en-suite bathrooms",
+        "Large living and dining areas",
+        "Modern kitchen with breakfast nook",
+        "Three private balconies",
+        "Separate family room",
+        "Walk-in closets in all bedrooms"
+      ],
+      "hotspots": [
+        {
+          "id": "living",
+          "x": 35,
+          "y": 45,
+          "room": "Living Room",
+          "dimensions": "22' × 18'",
+          "description": "Expansive living area perfect for entertaining"
+        },
+        {
+          "id": "family",
+          "x": 55,
+          "y": 45,
+          "room": "Family Room",
+          "dimensions": "16' × 14'",
+          "description": "Casual family gathering space"
+        },
+        {
+          "id": "kitchen",
+          "x": 25,
+          "y": 25,
+          "room": "Kitchen",
+          "dimensions": "16' × 12'",
+          "description": "Spacious kitchen with breakfast nook and pantry"
+        },
+        {
+          "id": "master",
+          "x": 75,
+          "y": 20,
+          "room": "Master Suite",
+          "dimensions": "20' × 16'",
+          "description": "Luxurious master suite with sitting area and spa-like bathroom"
+        },
+        {
+          "id": "bedroom2",
+          "x": 75,
+          "y": 45,
+          "room": "Bedroom 2",
+          "dimensions": "14' × 12'",
+          "description": "Spacious secondary bedroom with en-suite"
+        }
+      ]
+    },
+    {
+      "id": "unit-d",
+      "name": "Unit D",
+      "title": "Penthouse Suite",
+      "area": "3,500 sq ft",
+      "bedrooms": 4,
+      "bathrooms": 5,
+      "balconies": 4,
+      "price": "₹8.5 Cr onwards",
+      "image": "/media/floor-plans/unit-d.jpg",
+      "pdf": "/media/floor-plans/unit-d.pdf",
+      "description": "Ultra-luxury penthouse with panoramic views and premium finishes throughout.",
+      "features": [
+        "Four luxurious bedrooms with en-suite bathrooms",
+        "Grand living and dining areas",
+        "Gourmet kitchen with butler's pantry",
+        "Private terrace with outdoor kitchen",
+        "Home theater room",
+        "Wine cellar and bar area",
+        "Powder room for guests"
+      ],
+      "hotspots": [
+        {
+          "id": "living",
+          "x": 40,
+          "y": 40,
+          "room": "Grand Living",
+          "dimensions": "24' × 20'",
+          "description": "Magnificent living space with soaring ceilings"
+        },
+        {
+          "id": "dining",
+          "x": 30,
+          "y": 60,
+          "room": "Formal Dining",
+          "dimensions": "18' × 14'",
+          "description": "Elegant dining room for special occasions"
+        },
+        {
+          "id": "kitchen",
+          "x": 20,
+          "y": 35,
+          "room": "Gourmet Kitchen",
+          "dimensions": "18' × 14'",
+          "description": "Chef's kitchen with premium appliances and butler's pantry"
+        },
+        {
+          "id": "master",
+          "x": 75,
+          "y": 25,
+          "room": "Master Suite",
+          "dimensions": "22' × 18'",
+          "description": "Opulent master suite with private sitting area and spa bathroom"
+        },
+        {
+          "id": "theater",
+          "x": 75,
+          "y": 70,
+          "room": "Home Theater",
+          "dimensions": "16' × 12'",
+          "description": "Private cinema with premium sound system"
+        }
+      ]
+    }
+  ]
+} 
